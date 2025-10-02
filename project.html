@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to right, rgb(255, 200, 150), rgb(150, 200, 255));
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: #f0f2f5;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-github {
+    /* background-color: #24292e; */
+    color: black;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+        .btn-github:hover {
+            background-color: #aebbc7;
+        }
+
+        .btn-live {
+    /* background-color: #0066cc; */
+    color: #1e1d1d;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+        .btn-live:hover {
+            background-color: #8ab3db;
+        }
+
+
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+    
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-links-container {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-links-container {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 99;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-links-container.active {
+            display: flex;
+        }
+    }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav id="desktop-nav">
+            <div class="logo">***</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a class="btn-p" href="index.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+          
+        <div class="projects-grid">
+            <!-- Project Card 0 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="#" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">online-streaming</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">react</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">ffmpeg</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">backend</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/js/tree/main/streaming/frontend" class="btn btn-github">GitHub</a>
+                        <a href="#" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/CodeEditer.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">online-codeEditer</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">react</span>
+                        <span class="tech-tag">Node.js</span>
+                        
+                        <span class="tech-tag">Express</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/onlineCodeEditer" class="btn btn-github">GitHub</a>
+                        <a href="https://gregarious-genie-db1d72.netlify.app/" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/massenger.png" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">massaging-app</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">node(backend)</span>
+                        <span class="tech-tag">mysql</span>
+                        <span class="tech-tag">react</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/massage-react-sql" class="btn btn-github">GitHub</a>
+                        <a href="#" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/youtube.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">vidtube</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">node</span>
+                        <span class="tech-tag">api</span>
+                        <span class="tech-tag">react</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/my-js" class="btn btn-github">GitHub</a>
+                        <a href="https://marvelous-bonbon-34cfa5.netlify.app/" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/p1.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">portfolio</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">html</span>
+                        <span class="tech-tag">css</span>
+                        <span class="tech-tag">js</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/my-js" class="btn btn-github">GitHub</a>
+                        <a href="https://marvelous-bonbon-34cfa5.netlify.app/" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 5 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/Capture.PNG" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">E-commerece</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">html</span>
+                        <span class="tech-tag">css</span>
+                        <span class="tech-tag">js</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/my-js" class="btn btn-github">GitHub</a>
+                        <a href="https://66f161e8ef2baff09223fa53--symphonious-begonia-901442.netlify.app/" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 6 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/h2.JPG" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">hospital</h3>
+                    <div class="technologies">
+                        <span class="tech-tag">node</span>
+                        <span class="tech-tag">mysql</span>
+                        <span class="tech-tag">react</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/shubhambudde1/my-js" class="btn btn-github">GitHub</a>
+                        <a href="https://66f6b33667e03e507a5114a1--rainbow-moxie-931b3c.netlify.app/" class="btn btn-live">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         function toggleMenu() {
+        document.querySelector(".nav-links-container").classList.toggle("active");
+    }
+    </script>
+</body>
+</html>
